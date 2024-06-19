@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Down</title>
+</head>
+<body>
+    <h1>Subject: Workers not applied</h1>
+    <p><strong>Customer's Ticket</strong> "I've just added a Worker on the Cloudflare Dashboard for my website:
+         it works in the debugger but doesn't work when I query the site. Why is that? Is there anything to activate or anything I could check?"</p>
+    <p>Dear Customer,</p>
+    <p>Thank you for reaching out to Cloudflare Support. I understand that you've added a Worker to your</p>
+    <p>site, and while it works in the debugger, it doesn't seem to be functioning when you query your site</p>
+    <p>directly. Let's troubleshoot this issue together.</p>
+    <h1><strong>Steps to Ensure Your Worker is Applied Correctly</strong></h1>
+    <ol>
+            <li><strong>Worker Route Configuration:</strong></li>
+<ul>
+    <li>
+        Ensure that your Worker is correctly mapped to the appropriate route(s).<br>
+        In the Cloudflare Dashboard, go to Workers &gt; Manage Workers, and then check the routes specified for your Worker.<br>
+        Make sure the URL pattern matches your site's URLs correctly.
+      </li>
+</ul>
+
+    <li><strong>Script Activation:</strong></li>
+    <ul>
+        <li>
+            Verify that the Worker script is active. Under the Workers tab, check that your script is <br>
+            enabled. You should see a toggle switch next to your script's name; it should be in the "on"<br>
+            position.
+        </li>
+    </ul>
+<li><strong>Domain Configuration:</strong></li>
+ <ul>
+    <li>
+        Double-check that your domain is correctly set up in Cloudflare. Sometimes issues arise if  <br>
+        the domain settings are not properly configured to use Cloudflare's proxy.
+    </li>
+ </ul>
+  <li><strong>Cache Issues:</strong></li>
+  <ul>
+    <li>
+        Sometimes, old cached data might interfere with the application of new Workers. Clear your  <br>
+        site's cache in the Cloudflare Dashboard under Caching > Configuration > Purge <Cache. 
+        You can choose to purge everything or specific files. </li>
+  </ul>
+  <li><strong>Error Logs and Debugging:</strong></li>
+  <ul>
+    <li>
+        Check the error logs for any issues that might be preventing your Worker from running as <br>
+        expected. In the Workers tab, click on your Worker, and then go to Logs to review any <br>
+        errors or warnings.
+    </li>
+  </ul>
+  <li><strong>Propagation Time:</strong></li>
+  <ul>
+    <li>
+        Occasionally, it might take a few minutes for changes to propagate fully. If you have just  <br>
+        recently deployed your Worker, give it a little time and then check again.
+    </li>
+  </ul>
+</ol>
+<h2><strong>Additional Tips</strong></h2>
+<li><strong>Service Bindings:</strong>
+    If your Worker relies on any Service Bindings (such as KV storage or Durable <br>
+       Objects), ensure these are properly configured and accessible.
+</li>
+<li><strong>Firewall Rules:</strong>
+    Check if there are any firewall rules or security settings that might be blocking  <br>
+    the Worker requests. Go to Firewall > Firewall Rules to review and adjust accordingly.
+</li>
+ 
+<p>If you've gone through these steps and your Worker still isn't functioning as expected, please <br>
+    provide us with the following details so we can assist you further:
+</p>
+<li>The specific route or URL pattern the Worker is supposed to be applied to.</li>
+<li>Any error messages you are seeing in the logs.</li>
+<li>A brief description of what the Worker script is intended to do.</li>
+<p>We are here to help and ensure your Worker operates smoothly. Thank you for choosing Cloudflare.</p>
+<p>Best regards, <br>Saber Moahmed<br>Cloudflare Support Team</p>
+    </body>
+    </html>

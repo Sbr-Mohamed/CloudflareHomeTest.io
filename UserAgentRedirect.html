@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UserAgentRedirect</title>
+</head>
+<body>
+    <h1>Subject: Redirection based on user agent</h1>
+    <p>Customer inquire: I want to redirect visitor with specific user agent (e.g., MSIE 8.0) to a different page. It seems this is not possible with Cloudflare Page Rules. Is there any other way to achieve that using Cloudflare?</p>
+    <p>Hello,</p>
+    <p>Thank you for reaching out to Cloudflare support.</p>
+    <p>
+        I understand that you want to redirect visitors with a specific user agent (such as MSIE 8.0) to a different page. While this is not directly possible with Cloudflare Page Rules, you can achieve this by using Cloudflare Workers.
+    </p>
+    <p>
+        Cloudflare Workers allow you to run JavaScript on the edge and inspect request headers, making it possible to perform actions such as redirection based on the user agent. Here’s how you can set this up:
+    </p>
+    <h1><strong>Step-by-Step Guide to Redirect Based on User Agent Using Cloudflare Workers</strong></h1>
+    <ol>
+        <li><strong>Create a Cloudflare Worker</strong></li>
+        <ul>
+            <li>Log in to your Cloudflare account.</li>
+            <li>Navigate to the "Workers" section.</li>
+            <li>Create a new Worker.</li>
+        </ul>
+        <li><strong>Write the Worker Script</strong></li>
+        <ul>
+            <li>Use the following script to check the user agent and perform the redirection:</li>
+            <pre>
+addEventListener('fetch', event => {
+    event.respondWith(handleRequest(event.request))
+})
+
+async function handleRequest(request) {
+    const userAgent = request.headers.get('User-Agent') || ''
+    if (userAgent.includes('MSIE 8.0')) {
+        return Response.redirect('https://example.com/ie8', 302)
+    }
+    return fetch(request)
+}
+            </pre>
+            <li>This script checks if the User-Agent header contains MSIE 8.0 and redirects to <a href="https://example.com/ie8">https://example.com/ie8</a> if it matches.</li>
+        </ul>
+        <li><strong>Deploy the Worker</strong></li>
+        <ul>
+            <li>Save and deploy the script through the Cloudflare dashboard.</li>
+        </ul>
+        <li><strong>Assign the Worker to a Route</strong></li>
+        <ul>
+            <li>In the "Workers" section, under "Worker Routes," add a route (e.g., example.com/*).</li>
+            <li>Select the Worker you created and assign it to the route.</li>
+        </ul>
+    </ol>
+    <h2>Example Breakdown</h2>
+    <ul>
+        <li><strong>Event Listener:</strong> Sets up an event listener for fetch events (HTTP requests).</li>
+        <li><strong>User-Agent Check:</strong> Retrieves and checks the User-Agent header.</li>
+        <li><strong>Redirection:</strong> Redirects the request if the User-Agent matches.</li>
+        <li><strong>Forward Request:</strong> Forwards the request to the origin if the User-Agent does not match.</li>
+    </ul>
+    <p>
+        By following these steps, you can effectively redirect users based on their user agent using Cloudflare Workers. If you have any further questions or need assistance with this process, please don't hesitate to contact us.
+    </p>
+    <p>Best regards,<br>Saber Moahmed<br>Cloudflare Support Team</p>
+</body>
+</html>

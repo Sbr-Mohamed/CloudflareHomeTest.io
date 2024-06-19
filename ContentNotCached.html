@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content not Being Cached</title>
+</head>
+<body>
+    <h1>Subject: Content not Being Cached</h1>
+    <p>Hello,</p>
+   <p>
+    Thank you for reaching out to us about these concerns. Based on the curl output you provided, it<br>
+    appears that your site's resources are not being cached due to the Cache-Control headers set on <br>
+    your origin server (Cloudflare-Nginx):
+   </p>
+   <u>
+    <p>"Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0, max-age=0"</p>
+   </u>
+    <p>
+        These headers instruct browsers and intermediaries (including Cloudflare) not to cache the content <br>
+        (no-store, no-cache). This behavior can also be influenced by the sensitivity of your website's <br>
+        content, such as for banking sites where caching sensitive information on the client side should be <br>
+        avoided.
+    </p>
+   <p>To resolve this issue and optimize caching for your site, please follow these steps:</p>
+   <ol>
+    <li>
+        <strong>Update Cache-Control Headers: </strong>Modify the Cache-Control headers on your origin server <br>
+        (Cloudflare-Nginx) to allow caching. Consider using headers like Cache-Control: public, max- <br>
+        age=3600 to cache content for one hour, adjusting the max-age as needed.
+    </li>
+    <li>
+        <strong>Configure Page Rules in Cloudflare:</strong>Access your Cloudflare dashboard and navigate to the  <br>
+        Page Rules section. Here, you can set specific caching rules tailored to your website's <br>
+        requirements. You may want to enable a "Cache Everything" policy for appropriate content, <br>
+        ensuring sensitive data is excluded from caching.
+    </li>
+    <li>
+        <strong>Purge Cache:</strong>After updating the headers and configuring Page Rules, purge Cloudflare's cache  <br>
+        to ensure the changes take effect immediately. You can do this through the Cloudflare  <br>
+        dashboard or API.
+    </li>
+    <li>
+        <strong>Further Assistance:</strong>If you encounter any difficulties or have questions about optimizing caching <br>
+        settings or other Cloudflare services, please feel free to reach out to us. We're here to assist you <br>
+        in maximizing your site's performance and security with Cloudflare.
+    </li>
+   </ol>
+
+   <p>Best regards, <br>Saber Moahmed<br>Cloudflare Support Team</p>
+    </body>
+    </html>

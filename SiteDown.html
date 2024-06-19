@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Down</title>
+</head>
+<body>
+    <h1>Subject: Site down, your name servers are down</h1>
+    <p>
+       <Strong>Customer's ticket</Strong>" I am having trouble reaching my website http://example.com/ from different networks. Are your nameservers working <br>
+        properly?"
+    </p>
+    <p>Dear Customer,</p>
+    <p>Thank you for reaching out. I understand you are having trouble reaching your website <a href="http://example.com/">example.com</a> from different networks. Let's investigate this issue together.</p>
+
+    <p>First, I have checked the status of our nameservers, and they are operational without any reported issues. Here are the steps you can follow to troubleshoot:</p>
+    <ol>
+        <li><strong>Check DNS Configuration:</strong>
+            <ul>
+                <li>Ensure that the DNS records for your domain (<code>example.com</code>) are correctly configured within your Cloudflare account.</li>
+                <li>Verify that the A, AAAA, CNAME, or other relevant records are pointing to the correct IP addresses or domain names of your server or hosting provider.</li>
+            </ul>
+        
+        <li><strong>Verify Nameserver Settings</strong>
+            <ul> 
+                <li>Double-check that your domain is using Cloudflare's nameservers correctly. You can find your assigned Cloudflare nameservers in your Cloudflare account under the "DNS" section.</li>
+                <li>Ensure that these nameservers are configured at your domain registrar where you purchased your domain</li>
+            </ul>
+        <li><strong>Use DNS Tools for Diagnosis:</strong>To verify DNS propagation and functionality, you can use tools like:
+            <ul>
+                <li><strong>dig command</strong>: A command-line tool for querying DNS name servers.</li>
+                <li><strong>DNS Lookup Tools:</strong>Online tools such as MXToolbox or DNSstuff to check the current DNS records and propagation status of your domain.</li>
+            </ul>
+        
+                <li><strong>Check Network Configuration:</strong>
+                    <ul>
+                        <li>Sometimes, network issues specific to certain ISPs or regions can affect access to websites.</li>
+                        <li>Test accessing your website from different networks and devices to see if the issue persists consistently.</li>
+                    </ul>
+    </ol>
+        
+                    
+    <p>If the issue persists, please provide us with the specific error messages you are encountering and any recent changes made to your DNS settings.We are here to assist you further.</p>
+        <p>You can also access this link at Cloudflare's website for general DNS issues: <a href="https://developers.cloudflare.com/dns/troubleshooting/dns-issues/">Cloudflare DNS Issues</a></p>
+    <p>Best regards, <br>Saber Mohamed<br>Cloudflare Support Team</p>
+</body>
+</html>
